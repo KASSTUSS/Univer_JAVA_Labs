@@ -49,6 +49,8 @@ Define the Runner class in the default package, where:
 
 ### PROGRAM OUTPUT
 
-> cube; steel;7850.0; 0.025; 196.25
-> Subject mass: 212.5
-> cube; steel;7850.0; 0.025; 196.25
+>cube; steel;7850.0; 0.025; 196.25
+>
+>Subject mass: 212.5
+>
+>cube; steel;7850.0; 0.025; 196.25
