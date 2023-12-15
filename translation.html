@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Translation Page</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+$('#translate-form').submit(function(event) {
+event.preventDefault();
+var word = $('#word-input').val();
+translateWord(word);
+});
+function translateWord(word) {
+$.ajax({
+type: 'POST',
+url: 'translation',
+data: { word: word },
+success: function(response) {
+$('#translation-result').text(response);
+},
+error: function() {
+$('#translation-result').text('Error occurred during translation.');
+}
+});
+}
+});
+</script>
+</head>
+<body>
+<h1>Translation Page</h1>
+<form id="translate-form">
+<label for="word-input">Enter a word:</label>
+<input type="text" id="word-input" name="word" required>
+<button type="submit">Translate</button>
+</form>
+<div id="translation-result"></div>
+</body>
+</html>
